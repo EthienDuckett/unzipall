@@ -6,7 +6,7 @@ echo "enter a search term"
 read a
 echo "enter a directory, enter . for your working directory, or .. for your preceding directory"
 read DIR
-PART=$(ls "$DIR" -R | grep "$a")
+PART=$(find "$DIR" -type f -name "*$a")
 echo "$PART" > info.txt
 cat info.txt
 echo "is it okay to unzip this many files? (PRESS CTRL+C TO ABORT)"
